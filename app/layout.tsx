@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="rtl">
-      <body className={vazirmatn.className}>{children}</body>
+      <body className={vazirmatn.className + " bg-base-100"}>{children}</body>
     </html>
   );
 }

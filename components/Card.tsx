@@ -10,7 +10,7 @@ interface Props {
 
 const Card = ({ className, product }: Props) => {
   return (
-    <div className={`card w-full bg-base-100 shadow-xl ${className}`}>
+    <div className={`card w-full shadow-lg ${className}`}>
       <figure>
         <Link href={`/products/${product._id}`} className="w-full h-full">
           <Image

@@ -10,7 +10,7 @@ interface Props {
 
 const Card = ({ className, product }: Props) => {
   return (
-    <div className={`card w-full shadow-lg ${className}`}>
+    <div className={`card w-full shadow-lg bg-white ${className}`}>
       <figure>
         <Link href={`/products/${product._id}`} className="w-full h-full">
           <Image
@@ -26,7 +26,11 @@ const Card = ({ className, product }: Props) => {
 
       <div className="card-body p-5 gap-3">
         <Link href={`/products/${product._id}`}>
-          <h2 className="card-title text-base">{product.title}</h2>
+          <div className="tooltip w-full" data-tip={product.title}>
+            <h2 className="card-title text-base block truncate">
+              {product.title}
+            </h2>
+          </div>
         </Link>
 
         <div className="text-center text-md mt-2">

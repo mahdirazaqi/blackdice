@@ -1,24 +1,27 @@
 import axios from "axios";
-import { Product } from "../types/product";
 import { urlParser } from "../common/url-parser";
+import { GetProductsOutput } from "../dto/get-products";
 
 const ProductService = {
   getProducts: async (
+    page: number = 1,
     limit: number = 10,
+    sort: string = "-createdAt",
     tag: string = ""
-  ): Promise<Product[]> => {
+  ): Promise<GetProductsOutput> => {
     const resp = await axios.get(
       urlParser(
         "/products",
-        "?sort=-createdAt",
+        `?page=${page}`,
         `&limit=${limit}`,
+        `&sort=${sort}`,
         `&tag=${tag}`
       )
     );
 
     if (!resp) throw new Error("get products error");
 
-    return resp.data.products as Product[];
+    return resp.data as GetProductsOutput;
   },
 };
 

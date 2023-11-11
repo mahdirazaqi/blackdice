@@ -27,7 +27,7 @@ const Card = ({ className, product }: Props) => {
       <div className="card-body p-5 gap-3">
         <Link href={`/products/${product._id}`}>
           <div className="tooltip w-full" data-tip={product.title}>
-            <h2 className="card-title text-base block truncate">
+            <h2 className="card-title text-right text-base block truncate">
               {product.title}
             </h2>
           </div>

@@ -4,7 +4,11 @@ interface Props {
   height?: string | number;
 }
 
-export default function ({ className, width = 20, height = 20 }: Props) {
+export default function InstagramIcon({
+  className,
+  width = 20,
+  height = 20,
+}: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

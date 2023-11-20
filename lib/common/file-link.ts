@@ -8,8 +8,12 @@ export enum FileSize {
   EXTRA_SMALL = "extraSmall",
 }
 
+const defaultPlaceholder = "/default-placeholder.png";
+
 export const fileUrl = (file: File, size?: FileSize): string => {
-  if (!file) return "";
+  if (!file) return defaultPlaceholder;
+
+  if (typeof file === "string") return defaultPlaceholder;
 
   let path: string = file.paths.original;
 

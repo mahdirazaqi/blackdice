@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Todo List
 
 - متن های فارسی وبسایت همه در فایل های ترجمه قرار بگیرند
+- اضافه کردن Review مثل دیجی کالا و نواک

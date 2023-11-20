@@ -1,6 +1,7 @@
 import axios from "axios";
 import { urlParser } from "../common/url-parser";
 import { GetProductsOutput } from "../dto/get-products";
+import { GetProductOutput } from "../dto/get-product";
 
 const ProductService = {
   getProducts: async (
@@ -22,6 +23,14 @@ const ProductService = {
     if (!resp) throw new Error("get products error");
 
     return resp.data as GetProductsOutput;
+  },
+
+  getProduct: async (id: string): Promise<GetProductOutput> => {
+    const resp = await axios.get(urlParser(`/products/${id}`));
+
+    if (!resp) throw new Error("get product error");
+
+    return resp.data as GetProductOutput;
   },
 };
 

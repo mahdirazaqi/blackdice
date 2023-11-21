@@ -9,15 +9,16 @@ interface Props {
 const Footer = ({ className }: Props) => {
   return (
     <footer
-      className={`footer items-center p-4 bg-base-300 text-base-content ${className}`}
+      className={`footer flex flex-wrap justify-center sm:justify-between items-center p-4 bg-base-300 text-base-content ${className}`}
     >
-      <aside className="items-center grid-flow-col">
-        <CopyrightIcon />
-
-        <p>کلیه حقوق این وب‌سایت متعلق به بلک‌دایس می‌باشد.</p>
+      <aside className="w-full sm:w-fit sm:grow">
+        <p className="flex m-auto sm:m-0">
+          <CopyrightIcon className="mr-2" />
+          کلیه حقوق این وب‌سایت متعلق به بلک‌دایس می‌باشد.
+        </p>
       </aside>
 
-      <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <nav className="flex gap-4 md:place-self-center md:justify-self-end sm:grow-0">
         <a href="https://github.com/mahdirazaqi/blackdice" target="_blank">
           <GithubIcon />
         </a>

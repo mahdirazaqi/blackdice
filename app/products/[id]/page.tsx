@@ -15,11 +15,11 @@ const Product = async ({ params }: any) => {
 
   return (
     <main>
-      <div className="md:container m-auto">
-        <div className="flex">
-          <div className="grow-0">
+      <div className="md:container m-auto px-2">
+        <div className="flex flex-wrap">
+          <div className="sm:grow-0">
             <Image
-              className="rounded-xl"
+              className="rounded-xl w-full sm:w-[300px] md:w-[400px]"
               src={fileUrl(product.images[0])}
               width={400}
               height={400}
@@ -27,32 +27,35 @@ const Product = async ({ params }: any) => {
             />
           </div>
 
-          <div className="grow p-3 flex flex-col justify-between">
+          <div className="w-full sm:w-fit sm:grow py-3 sm:p-3 flex flex-col justify-between">
             <div>
-              <h1 className="text-xl font-bold">{product.title}</h1>
+              <h1 className="text-xl font-bold mb-3">{product.title}</h1>
 
               <div>
                 {product.tags.map((tag, index) => (
-                  <div key={index} className="badge badge-ghost text-xs">
+                  <div
+                    key={index}
+                    className="badge badge-ghost text-xs mr-3 mb-10"
+                  >
                     {tag}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="w-fit">
-              <div className="text-center text-xs line-through text-gray-400 m-1">
+            <div className="w-full sm:w-fit">
+              <div className="text-center text-sm line-through text-gray-400 m-1">
                 {product.salePrice < product.referencePrice
                   ? product.referencePrice.toLocaleString() + " تومان"
                   : ""}
               </div>
 
-              <div className="text-center text-md m-1">
+              <div className="text-center text-lg mt-1 mb-3">
                 {product.salePrice.toLocaleString() + " "}
                 تومان
               </div>
 
-              <button className="btn btn-wide btn-neutral">
+              <button className="btn btn-block sm:btn-wide btn-neutral">
                 افزودن به سبدخرید
               </button>
             </div>
@@ -68,7 +71,15 @@ const Product = async ({ params }: any) => {
         <div className="mt-3">
           <h3 className="text-xl font-bold mt-2 mb-1">در همین سبک</h3>
 
-          <Slider products={products} />
+          <Slider
+            products={products}
+            xs={2.5}
+            sm={2.5}
+            md={3.5}
+            lg={4.5}
+            xl={5.5}
+            xxl={6.5}
+          />
         </div>
       </div>
     </main>

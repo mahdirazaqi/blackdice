@@ -8,11 +8,40 @@ import Card from "./Card";
 interface Props {
   className?: string;
   products: Product[];
+  xxs?: number;
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  xxl: number;
 }
 
-const Slider = ({ className, products }: Props) => {
+const Slider = ({
+  className,
+  products,
+  xxs = 1.5,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  xxl,
+}: Props) => {
   return (
-    <Swiper spaceBetween={16} slidesPerView={4.5} className={className}>
+    <Swiper
+      className={className}
+      spaceBetween={16}
+      slidesPerView={xxs}
+      breakpoints={{
+        460: { slidesPerView: xs },
+        640: { slidesPerView: sm },
+        768: { slidesPerView: md },
+        1024: { slidesPerView: lg },
+        1280: { slidesPerView: xl },
+        1536: { slidesPerView: xxl },
+      }}
+    >
       {products.map((product, index) => (
         <SwiperSlide key={index} className="py-3">
           <Card product={product} />

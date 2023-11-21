@@ -2,10 +2,10 @@ import CardSection from "@/components/CardSection";
 import ProductService from "@/lib/services/product.service";
 
 const Root = async () => {
-  const newGames = await ProductService.getProducts(1, 4);
-  const strategyGames = await ProductService.getProducts(1, 4, "استراتژی");
-  const partyGames = await ProductService.getProducts(1, 4, "مهمانی");
-  const familyGames = await ProductService.getProducts(1, 4, "خانوادگی");
+  const newGames = await ProductService.getProducts(1, 4, "");
+  const strategyGames = await ProductService.getProducts(1, 4, "", "استراتژی");
+  const partyGames = await ProductService.getProducts(1, 4, "", "مهمانی");
+  const familyGames = await ProductService.getProducts(1, 4, "", "خانوادگی");
 
   return (
     <main>

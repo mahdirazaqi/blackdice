@@ -47,10 +47,8 @@ const Header = ({ className }: Props) => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {menuItems.map((item, i) => (
-                <li>
-                  <Link key={i} href={item.url}>
-                    {item.title}
-                  </Link>
+                <li key={i}>
+                  <Link href={item.url}>{item.title}</Link>
                 </li>
               ))}
             </ul>
@@ -62,10 +60,8 @@ const Header = ({ className }: Props) => {
 
           <ul className="menu menu-horizontal px-1 hidden md:flex">
             {menuItems.map((item, i) => (
-              <li>
-                <Link key={i} href={item.url}>
-                  {item.title}
-                </Link>
+              <li key={i}>
+                <Link href={item.url}>{item.title}</Link>
               </li>
             ))}
           </ul>

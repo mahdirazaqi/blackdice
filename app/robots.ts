@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/price-list",
+      // disallow: "/price-list",
     },
     sitemap: "https://blackdice.ir/sitemap.xml",
   };

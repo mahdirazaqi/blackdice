@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const sitemap = resp.products.map((product) => {
     return {
-      url: `https://blackdice.ir/products/${product._id}`,
+      url: `https://blackdice.ir/products/${product.slug}`,
       lastModified: product.updatedAt,
     };
   });

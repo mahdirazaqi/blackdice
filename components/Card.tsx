@@ -12,7 +12,7 @@ const Card = ({ className, product }: Props) => {
   return (
     <div className={`card w-full shadow-lg bg-white ${className}`}>
       <figure>
-        <Link href={`/products/${product._id}`} className="w-full h-full">
+        <Link href={`/products/${product.slug}`} className="w-full h-full">
           <Image
             className="w-full h-full aspect-square object-cover object-center"
             src={fileUrl(product.images[0])}
@@ -25,7 +25,7 @@ const Card = ({ className, product }: Props) => {
       </figure>
 
       <div className="card-body p-5 gap-3">
-        <Link href={`/products/${product._id}`}>
+        <Link href={`/products/${product.slug}`}>
           <div className="tooltip w-full" data-tip={product.title}>
             <h2 className="card-title text-right text-base block truncate">
               {product.title}

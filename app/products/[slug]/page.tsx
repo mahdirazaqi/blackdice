@@ -4,7 +4,7 @@ import ProductService from "@/lib/services/product.service";
 import Image from "next/image";
 
 const Product = async ({ params }: any) => {
-  const { product } = await ProductService.getProduct(params.id);
+  const { product } = await ProductService.getProduct(params.slug);
 
   const { products } = await ProductService.getProducts(
     1,

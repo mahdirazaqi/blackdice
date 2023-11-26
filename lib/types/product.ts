@@ -4,6 +4,7 @@ import { User } from "./user";
 
 export interface Product extends Core {
   createdBy: User;
+  slug: string;
   title: string;
   description: string;
   tags: string[];

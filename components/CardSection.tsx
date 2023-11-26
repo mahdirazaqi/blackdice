@@ -23,7 +23,7 @@ const CardSection = ({ className = "", title, link, products }: Props) => {
       <div className="overflow-y-auto flex p-3 gap-3 md:overflow-visible md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-4">
         {products.map((product) => (
           <Card
-            key={product._id}
+            key={product.slug}
             className="min-w-[280px] md:min-w-0"
             product={product}
           />

@@ -26,8 +26,6 @@ const ProductService = {
   },
 
   getProduct: async (slug: string): Promise<GetProductOutput> => {
-    console.log(slug);
-
     const resp = await axios.get(urlParser(`/products/${slug}`));
 
     if (!resp) throw new Error("get product error");

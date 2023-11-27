@@ -1,6 +1,7 @@
 import Slider from "@/components/Slider";
 import { fileUrl } from "@/lib/common/file-link";
 import ProductService from "@/lib/services/product.service";
+import Head from "next/head";
 import Image from "next/image";
 
 const Product = async ({ params }: any) => {
@@ -15,6 +16,10 @@ const Product = async ({ params }: any) => {
 
   return (
     <main>
+      <Head>
+        <title>{product.title} | بلک دایس</title>
+      </Head>
+
       <div className="md:container m-auto px-2">
         <div className="flex flex-wrap">
           <div className="sm:grow-0">

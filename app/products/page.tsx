@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import ProductService from "@/lib/services/product.service";
+import Head from "next/head";
 
 const Products = async ({ searchParams }: any) => {
   const page = searchParams.page || 1;
@@ -12,6 +13,10 @@ const Products = async ({ searchParams }: any) => {
 
   return (
     <main>
+      <Head>
+        <title>لیست محصولات | بلک دایس</title>
+      </Head>
+
       <div className="md:container m-auto">
         <div className="flex">
           <div className="w-full p-2">

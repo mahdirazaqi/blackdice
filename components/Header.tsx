@@ -35,6 +35,36 @@ const Header = ({ className }: Props) => {
     <header
       className={`navbar sticky top-0 z-50 bg-base-300 bg-opacity-90 ${className}`}
     >
+      {/* The button to open modal */}
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+
+      <div className="modal" role="dialog">
+        <div className="modal-box p-20">
+          <h3 className="text-lg font-bold text-center mb-8">
+            ورود به بلک دایس
+          </h3>
+
+          <div className="join w-full my-3" dir="ltr">
+            <div className="flex join-item border items-center px-5 bg-base-200">
+              +98
+            </div>
+
+            <input
+              className="input input-bordered join-item w-full focus:outline-none"
+              placeholder="9123456789"
+            />
+          </div>
+
+          <button className="btn w-full btn-primary">ورود با تلفن همراه</button>
+        </div>
+
+        <label className="modal-backdrop" htmlFor="my_modal_7">
+          Close
+        </label>
+      </div>
+
       <div className="w-full md:container m-auto">
         <div className="flex flex-1 items-center">
           <div className="dropdown md:hidden">
@@ -75,6 +105,10 @@ const Header = ({ className }: Props) => {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
           </Link>
+
+          <label htmlFor="my_modal_7" className="btn btn-primary btn-sm">
+            ورود / ثبت نام
+          </label>
 
           <Link className="btn btn-ghost btn-circle avatar" href={"/account"}>
             <div className="w-10 rounded-full">
